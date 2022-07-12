@@ -1,11 +1,14 @@
-# Node + Express + EJS + Tailwind CSS Starter Template
+# Node Login System
 
-The intention of this project is how to create app using Node.js + Express.js + EJS + Tailwind css
+## Node + Express + EJS + Tailwind CSS + MongoDB
+
+The intention of this project is how to create app using Node.js + Express.js + EJS + Tailwind css + MongoDB
 
 ## Dependencies
 
 - [Node.js](https://nodejs.org/)
 - [Express.js](https://expressjs.com/)
+- [MongoDB](https://www.mongodb.com/)
 - [EJS](https://ejs.co/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
