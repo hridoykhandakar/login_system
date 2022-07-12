@@ -1,10 +1,14 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const encrypt = require("mongoose-encryption");
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+console.log(process.env.SECRET_KEY);
 
 // design file
 app.use(express.static("public"));
@@ -18,6 +22,12 @@ mongoose.connect("mongodb://localhost:27017/users").then(() => {
 const userSchema = new mongoose.Schema({
   email: String,
   password: String,
+});
+
+const secret = "Thisisourlittlesecrect";
+userSchema.plugin(encrypt, {
+  secret: process.env.SECRET_KEY,
+  encryptedFields: ["password"],
 });
 
 const User = mongoose.model("User", userSchema);
@@ -56,6 +66,7 @@ app.post("/login", (req, res) => {
       console.log(err);
     } else {
       if (founduser.password === password) {
+        console.log(founduser.password);
         res.render("secrect");
       }
     }
