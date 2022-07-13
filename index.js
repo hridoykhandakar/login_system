@@ -48,7 +48,7 @@ app.post("/register", (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        res.render("secrect");
+        res.render("secret");
       }
     });
   });
@@ -65,7 +65,7 @@ app.post("/login", (req, res) => {
       if (founduser) {
         bcrypt.compare(password, founduser.password, (err, result) => {
           if (result) {
-            res.render("secrect");
+            res.render("secret");
           }
         });
       }
