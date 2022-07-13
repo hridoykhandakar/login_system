@@ -52,7 +52,7 @@ app.post("/register", (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      res.render("secrect");
+      res.render("secret");
     }
   });
 });
@@ -67,7 +67,7 @@ app.post("/login", (req, res) => {
     } else {
       if (founduser.password === password) {
         console.log(founduser.password);
-        res.render("secrect");
+        res.render("secret");
       }
     }
   });
